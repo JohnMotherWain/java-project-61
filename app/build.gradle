@@ -1,7 +1,8 @@
 plugins {
     id 'java'
     id 'application'
-
+    id 'se.patrikerdes.use-latest-versions' version '0.2.18'
+    id 'com.github.ben-manes.versions' version '0.46.0'
 }
 
 group = 'hexlet.code'
@@ -12,8 +13,8 @@ repositories {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.9.2')
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    testImplementation platform('org.junit:junit-bom:5.10.0-M1')
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0-M1'
 }
 
 test {
@@ -26,8 +27,11 @@ jar {
     manifest {
         attributes "Main-Class": "hexlet.code.App"
     }
-
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
+}
+
+compileJava {
+    options.release = 17
 }
