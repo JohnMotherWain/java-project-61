@@ -18,10 +18,7 @@ public class App {
 
         enterFromGamer.close();
     }
-    public static String getGamerNamer() {
-        return gamerName;
-    }
-    public static int collectGameNumber() {
+    private static int collectGameNumber() {
         System.out.println("""
                 Please enter the game number and press Enter.
                 1 - Greet
@@ -36,35 +33,33 @@ public class App {
         enterFromGamer.nextLine();  //Компенсатор багов Scanner-а
         return gameNumber;
     }
-    public static void playGameNumber(int gameNumber) { //Обработка номера игры
+    private static void playGameNumber(int gameNumber) { //Обработка номера игры
         switch (gameNumber) {
-            case CH_GREET -> Cli.greetings();
+            case CH_GREET -> Cli.greetings(enterFromGamer);
             case CH_EVEN -> {
-                gamerName = Cli.greetings();
+                gamerName = Cli.greetings(enterFromGamer);
                 processGameData(new EvenData(MAX_OF_NUMBER));
             }
             case CH_EXIT -> { }
             default -> System.out.println("The wrong number " + gameNumber + " was selected.\nTry again.");
         }
     }
-    public static void processGameData(GameInterface game) {
+    private static void processGameData(GameInterface game) {
         System.out.println(game.getIntro());
 
         for (int i = 0; i < NUMBER_OF_ATTEMPTS; i++) {
             String[] askAnswer = game.getNewAskAnswer();
             System.out.println("Question: " + askAnswer[0]);
-
+            System.out.print("Your answer: ");
             String gamerAnswer = enterFromGamer.nextLine();
-            System.out.println("Your answer: " + gamerAnswer);
             if (gamerAnswer.equals(askAnswer[1])) {
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + gamerAnswer + "'" + " is wrong answer. Correct answer was "
-                        + "'" + askAnswer[1] + "'" + ". Let's try again, " + getGamerNamer() + "!");
-                System.out.println("=".repeat(25));
+                System.out.println("'" + gamerAnswer + "'" + " is wrong answer ;(. Correct answer was "
+                        + "'" + askAnswer[1] + "'" + ". \nLet's try again, " + gamerName + "!");
                 return;
             }
         }
-        System.out.println("Congratulations, " + getGamerNamer() + "!");
+        System.out.println("Congratulations, " + gamerName + "!");
     }
 }
