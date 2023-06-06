@@ -4,7 +4,7 @@ import java.math.BigInteger;
 import hexlet.code.GameInterface;
 
 public class PrimeData implements GameInterface { //Простое число
-    private static final String INTRO = "Is given number is prime? ('yes' or 'no')";
+    private static final String INTRO = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     private final int maxNumber;
     public PrimeData(int maxNumber) {
         this.maxNumber = maxNumber;
