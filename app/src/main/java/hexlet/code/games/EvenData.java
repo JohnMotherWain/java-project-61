@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.GameInterface;
 
 public class EvenData implements GameInterface { //Чет/нечет
-    private static final String INTRO = "Answer 'yes' if number even otherwise answer 'no'.";
+    private static final String INTRO = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     private final int maxNumber;
     public EvenData(int maxNumber) {
         this.maxNumber = maxNumber;
