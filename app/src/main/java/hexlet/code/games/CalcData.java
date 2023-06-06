@@ -19,7 +19,7 @@ public class CalcData implements GameInterface { //Калькулятор
         String[] digitOperators = {"+", "-", "*"};
         int operandIndex = (int) (Math.random() * digitOperators.length);
         //Пропишем пару Вопрос + ответ
-        askAnswer[0] = number1 + digitOperators[operandIndex] + number2;
+        askAnswer[0] = number1 + " " + digitOperators[operandIndex] + " " + number2;
         int intResult = operandIndex == 0 ? number1 + number2
                 : operandIndex == 1 ? number1 - number2 : number1 * number2;
         askAnswer[1] = String.valueOf(intResult);
