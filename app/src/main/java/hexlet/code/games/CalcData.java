@@ -17,14 +17,12 @@ public class CalcData implements GameInterface { //Калькулятор
         int number1 = (int) (Math.random() * maxNumber);
         int number2 = (int) (Math.random() * maxNumber);
         String[] digitOperators = {"+", "-", "*"};
-        int operIndx = (int) (Math.random() * digitOperators.length);
+        int operandIndex = (int) (Math.random() * digitOperators.length);
         //Пропишем пару Вопрос + ответ
-        askAnswer[0] = number1 + digitOperators[operIndx] + number2;
-        switch (digitOperators[operIndx]) {
-            case "+" -> askAnswer[1] = String.valueOf(number1 + number2);
-            case "-" -> askAnswer[1] = String.valueOf(number1 - number2);
-            default -> askAnswer[1] = String.valueOf(number1 * number2);
-        }
+        askAnswer[0] = number1 + digitOperators[operandIndex] + number2;
+        int intResult = operandIndex == 0 ? number1 + number2
+                : operandIndex == 1 ? number1 - number2 : number1 * number2;
+        askAnswer[1] = String.valueOf(intResult);
         return askAnswer;
     }
 }
