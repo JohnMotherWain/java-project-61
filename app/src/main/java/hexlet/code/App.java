@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.EvenData;
 import hexlet.code.games.CalcData;
 import hexlet.code.games.GcdData;
+import hexlet.code.games.ProgressionData;
 import java.util.Scanner;
 
 public class App {
@@ -10,6 +11,7 @@ public class App {
     private static final int CH_EVEN = 2;
     private static final int CH_CALC = 3;
     private static final int CH_GCD = 4;
+    private static final int CH_PROGRESSION = 5;
     private static final int CH_EXIT = 0;
     private static final int MAX_OF_NUMBER = 100; //Максимальное число для рандомных значений
     private static Scanner enterFromGamer;
@@ -44,6 +46,8 @@ public class App {
                     enterFromGamer);
             case CH_GCD -> Engine.processGameData(Cli.greetings(enterFromGamer), new GcdData(MAX_OF_NUMBER),
                     enterFromGamer);
+            case CH_PROGRESSION -> Engine.processGameData(Cli.greetings(enterFromGamer),
+                    new ProgressionData(MAX_OF_NUMBER), enterFromGamer);
             case CH_EXIT -> { }
             default -> System.out.println("The wrong number " + gameNumber + " was selected.\nTry again.");
         }

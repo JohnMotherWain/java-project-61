@@ -14,3 +14,6 @@ https://asciinema.org/a/2gmJNbrvRxO0EM4MPBCd9LEvg
 Example GDC
 https://asciinema.org/a/0WMiDBPqnBpIvC9gW6tVELmkF
 
+Example Progession
+https://asciinema.org/a/ZvNleGy7OmcL8cWAVIc6jHuGj
+
