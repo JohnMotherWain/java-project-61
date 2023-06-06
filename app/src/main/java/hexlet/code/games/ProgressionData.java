@@ -5,7 +5,8 @@ import hexlet.code.GameInterface;
 public class ProgressionData implements GameInterface { //Дополнить прогрессию
     private static final String INTRO = "What number is missing in the progression?";
     private static final int MAX_DELTA = 10;
-    private static final int MIN_MEMBERS_QUANTITY = 5;
+    private static final int MIN_MEMBERS_QUANTITY = 6;
+    private static final int FLOW_MEMBERS_QUANTITY = 4;
     private final int maxNumber;
     public ProgressionData(int maxNumber) {
         this.maxNumber = maxNumber;
@@ -18,7 +19,7 @@ public class ProgressionData implements GameInterface { //Дополнить п�
         //Выберем случайное число
         int firstMember = (int) (Math.random() * maxNumber / MAX_DELTA);
         int progressionDelta = (int) (Math.random() * MAX_DELTA);
-        int membersQuantity = (int) (MIN_MEMBERS_QUANTITY + Math.random() * MIN_MEMBERS_QUANTITY);
+        int membersQuantity = (int) (MIN_MEMBERS_QUANTITY + Math.random() * FLOW_MEMBERS_QUANTITY);
         int questMember = (int) (Math.random() * (membersQuantity - 1));
         int[] progressionArray = progressionGenerate(firstMember, progressionDelta, membersQuantity);
         //Пропишем пару Вопрос + ответ
