@@ -18,7 +18,7 @@ public class ProgressionData implements GameInterface { //Дополнить п�
         String[] askAnswer = new String[2];
         //Выберем случайное число
         int firstMember = (int) (Math.random() * maxNumber / MAX_DELTA);
-        int progressionDelta = (int) (Math.random() * MAX_DELTA);
+        int progressionDelta = (int) (1 + Math.random() * MAX_DELTA);
         int membersQuantity = (int) (MIN_MEMBERS_QUANTITY + Math.random() * FLOW_MEMBERS_QUANTITY);
         int questMember = (int) (Math.random() * (membersQuantity - 1));
         int[] progressionArray = progressionGenerate(firstMember, progressionDelta, membersQuantity);
@@ -38,11 +38,15 @@ public class ProgressionData implements GameInterface { //Дополнить п�
     public String questString(int[] progressionArray, int questMember) {
         StringBuilder returnString = new StringBuilder();
         for (int i = 0; i < progressionArray.length; i++) {
-            if (i == questMember) {
-                returnString.append(" ..");
-            } else {
-                returnString.append(" ").append(progressionArray[i]);
+            if (i != 0) {
+                returnString.append(" ");
             }
+            if (i == questMember) {
+                returnString.append("..");
+            } else {
+                returnString.append(progressionArray[i]);
+            }
+
         }
         return returnString.toString();
     }
