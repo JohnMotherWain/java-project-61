@@ -4,6 +4,7 @@ import hexlet.code.games.EvenData;
 import hexlet.code.games.CalcData;
 import hexlet.code.games.GcdData;
 import hexlet.code.games.ProgressionData;
+import hexlet.code.games.PrimeData;
 import java.util.Scanner;
 
 public class App {
@@ -12,6 +13,7 @@ public class App {
     private static final int CH_CALC = 3;
     private static final int CH_GCD = 4;
     private static final int CH_PROGRESSION = 5;
+    private static final int CH_PRIME = 6;
     private static final int CH_EXIT = 0;
     private static final int MAX_OF_NUMBER = 100; //Максимальное число для рандомных значений
     private static Scanner enterFromGamer;
@@ -40,14 +42,16 @@ public class App {
     private static void playGameNumber(int gameNumber) { //Обработка номера игры
         switch (gameNumber) {
             case CH_GREET -> Cli.greetings(enterFromGamer);
-            case CH_EVEN -> Engine.processGameData(Cli.greetings(enterFromGamer), new EvenData(MAX_OF_NUMBER),
-                    enterFromGamer);
-            case CH_CALC -> Engine.processGameData(Cli.greetings(enterFromGamer), new CalcData(MAX_OF_NUMBER),
-                    enterFromGamer);
-            case CH_GCD -> Engine.processGameData(Cli.greetings(enterFromGamer), new GcdData(MAX_OF_NUMBER),
-                    enterFromGamer);
+            case CH_EVEN -> Engine.processGameData(Cli.greetings(enterFromGamer),
+                    new EvenData(MAX_OF_NUMBER), enterFromGamer);
+            case CH_CALC -> Engine.processGameData(Cli.greetings(enterFromGamer),
+                    new CalcData(MAX_OF_NUMBER), enterFromGamer);
+            case CH_GCD -> Engine.processGameData(Cli.greetings(enterFromGamer),
+                    new GcdData(MAX_OF_NUMBER), enterFromGamer);
             case CH_PROGRESSION -> Engine.processGameData(Cli.greetings(enterFromGamer),
                     new ProgressionData(MAX_OF_NUMBER), enterFromGamer);
+            case CH_PRIME -> Engine.processGameData(Cli.greetings(enterFromGamer),
+                    new PrimeData(MAX_OF_NUMBER), enterFromGamer);
             case CH_EXIT -> { }
             default -> System.out.println("The wrong number " + gameNumber + " was selected.\nTry again.");
         }

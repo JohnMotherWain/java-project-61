@@ -17,3 +17,6 @@ https://asciinema.org/a/0WMiDBPqnBpIvC9gW6tVELmkF
 Example Progession
 https://asciinema.org/a/ZvNleGy7OmcL8cWAVIc6jHuGj
 
+Example Prime Number
+https://asciinema.org/a/7QtXuo5bJEkBqYUvpUSrcc416
+
