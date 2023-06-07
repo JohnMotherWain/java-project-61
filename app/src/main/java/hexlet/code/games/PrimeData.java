@@ -6,8 +6,8 @@ import hexlet.code.GameInterface;
 public class PrimeData implements GameInterface { //Простое число
     private static final String INTRO = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     private final int maxNumber;
-    public PrimeData(int maxNumber) {
-        this.maxNumber = maxNumber;
+    public PrimeData(int maxNumberExternal) {
+        this.maxNumber = maxNumberExternal;
     }
     public String getIntro() {
         return INTRO;
@@ -21,7 +21,7 @@ public class PrimeData implements GameInterface { //Простое число
         askAnswer[1] = (isProbablePrime(number1)) ? "yes" : "no";
         return askAnswer;
     }
-    private boolean isProbablePrime(Integer testNumber) {
+    private static boolean isProbablePrime(Integer testNumber) {
         BigInteger bigInteger = BigInteger.valueOf(testNumber);
         return bigInteger.isProbablePrime((int) Math.log(testNumber));
     }

@@ -8,8 +8,8 @@ public class ProgressionData implements GameInterface { //Дополнить п�
     private static final int MIN_MEMBERS_QUANTITY = 6;
     private static final int FLOW_MEMBERS_QUANTITY = 4;
     private final int maxNumber;
-    public ProgressionData(int maxNumber) {
-        this.maxNumber = maxNumber;
+    public ProgressionData(int maxNumberExternal) {
+        this.maxNumber = maxNumberExternal;
     }
     public String getIntro() {
         return INTRO;
@@ -27,7 +27,7 @@ public class ProgressionData implements GameInterface { //Дополнить п�
         askAnswer[1] = String.valueOf(progressionArray[questMember]);
         return askAnswer;
     }
-    public int[] progressionGenerate(int firstMember, int progressionDelta, int membersQuantity) {
+    private static int[] progressionGenerate(int firstMember, int progressionDelta, int membersQuantity) {
         //Арифмитическая прогрессия
         int[] returnArray = new int[membersQuantity];
         for (int i = 0; i < membersQuantity; i++) {
@@ -35,7 +35,7 @@ public class ProgressionData implements GameInterface { //Дополнить п�
         }
         return returnArray;
     }
-    public String questString(int[] progressionArray, int questMember) {
+    private static String questString(int[] progressionArray, int questMember) {
         StringBuilder returnString = new StringBuilder();
         for (int i = 0; i < progressionArray.length; i++) {
             if (i != 0) {

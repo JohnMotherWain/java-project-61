@@ -5,8 +5,8 @@ import hexlet.code.GameInterface;
 public class CalcData implements GameInterface { //Калькулятор
     private static final String INTRO = "What is the result of the expression?";
     private final int maxNumber;
-    public CalcData(int maxNumber) {
-        this.maxNumber = maxNumber;
+    public CalcData(int maxNumberExternal) {
+        this.maxNumber = maxNumberExternal;
     }
     public String getIntro() {
         return INTRO;

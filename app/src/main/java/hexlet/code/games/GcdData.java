@@ -5,8 +5,8 @@ import hexlet.code.GameInterface;
 public class GcdData implements GameInterface { //Наибольший общий делитель 2-х чисел
     private static final String INTRO = "Find the greatest common divisor of given numbers.";
     private final int maxNumber;
-    public GcdData(int maxNumber) {
-        this.maxNumber = maxNumber;
+    public GcdData(int maxNumberExternal) {
+        this.maxNumber = maxNumberExternal;
     }
     public String getIntro() {
         return INTRO;
