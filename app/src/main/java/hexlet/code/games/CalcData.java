@@ -8,10 +8,10 @@ public class CalcData implements GameInterface { //Калькулятор
     public CalcData(int maxNumberExternal) {
         this.maxNumber = maxNumberExternal;
     }
-    public String getIntro() {
+    public final String getIntro() {
         return INTRO;
     }
-    public String[] getNewAskAnswer() {
+    public final String[] getNewAskAnswer() {
         String[] askAnswer = new String[2];
         //Выберем случайные числа и операцию
         int number1 = (int) (Math.random() * maxNumber);

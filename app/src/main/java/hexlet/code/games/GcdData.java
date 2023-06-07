@@ -8,10 +8,10 @@ public class GcdData implements GameInterface { //Наибольший общи�
     public GcdData(int maxNumberExternal) {
         this.maxNumber = maxNumberExternal;
     }
-    public String getIntro() {
+    public final String getIntro() {
         return INTRO;
     }
-    public String[] getNewAskAnswer() {
+    public final String[] getNewAskAnswer() {
         String[] askAnswer = new String[2];
         //Выберем случайные числа
         int number1 = (int) (Math.random() * maxNumber);

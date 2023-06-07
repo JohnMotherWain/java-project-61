@@ -9,10 +9,10 @@ public class PrimeData implements GameInterface { //Простое число
     public PrimeData(int maxNumberExternal) {
         this.maxNumber = maxNumberExternal;
     }
-    public String getIntro() {
+    public final String getIntro() {
         return INTRO;
     }
-    public String[] getNewAskAnswer() {
+    public final String[] getNewAskAnswer() {
         String[] askAnswer = new String[2];
         //Выберем случайное число
         int number1 = (int) (Math.random() * maxNumber);

@@ -8,10 +8,10 @@ public class EvenData implements GameInterface { //Чет/нечет
     public EvenData(int maxNumberExternal) {
         this.maxNumber = maxNumberExternal;
     }
-    public String getIntro() {
+    public final String getIntro() {
         return INTRO;
     }
-    public String[] getNewAskAnswer() {
+    public final String[] getNewAskAnswer() {
         String[] askAnswer = new String[2];
         int number1 = (int) (Math.random() * maxNumber); //Выберем случайное число
         //Пропишем пару Вопрос + ответ

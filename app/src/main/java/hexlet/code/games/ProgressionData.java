@@ -11,10 +11,10 @@ public class ProgressionData implements GameInterface { //Дополнить п�
     public ProgressionData(int maxNumberExternal) {
         this.maxNumber = maxNumberExternal;
     }
-    public String getIntro() {
+    public final String getIntro() {
         return INTRO;
     }
-    public String[] getNewAskAnswer() {
+    public final String[] getNewAskAnswer() {
         String[] askAnswer = new String[2];
         //Выберем случайное число
         int firstMember = (int) (Math.random() * maxNumber / MAX_DELTA);
