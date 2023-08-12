@@ -15,14 +15,11 @@ public class App {
     private static final int CH_PROGRESSION = 5;
     private static final int CH_PRIME = 6;
     private static final int CH_EXIT = 0;
-    private static final int MAX_OF_NUMBER = 100; //Максимальное число для рандомных значений
     private static Scanner enterFromGamer;
     public static void main(String[] args) {
         enterFromGamer = new Scanner(System.in);
 
         playGameNumber(collectGameNumber());
-
-        enterFromGamer.close();
     }
     private static int collectGameNumber() {
         System.out.println("""
@@ -43,15 +40,15 @@ public class App {
         switch (gameNumber) {
             case CH_GREET -> Cli.greetings(enterFromGamer);
             case CH_EVEN -> Engine.processGameData(Cli.greetings(enterFromGamer),
-                    new EvenData(MAX_OF_NUMBER), enterFromGamer);
+                    new EvenData(), enterFromGamer);
             case CH_CALC -> Engine.processGameData(Cli.greetings(enterFromGamer),
-                    new CalcData(MAX_OF_NUMBER), enterFromGamer);
+                    new CalcData(), enterFromGamer);
             case CH_GCD -> Engine.processGameData(Cli.greetings(enterFromGamer),
-                    new GcdData(MAX_OF_NUMBER), enterFromGamer);
+                    new GcdData(), enterFromGamer);
             case CH_PROGRESSION -> Engine.processGameData(Cli.greetings(enterFromGamer),
-                    new ProgressionData(MAX_OF_NUMBER), enterFromGamer);
+                    new ProgressionData(), enterFromGamer);
             case CH_PRIME -> Engine.processGameData(Cli.greetings(enterFromGamer),
-                    new PrimeData(MAX_OF_NUMBER), enterFromGamer);
+                    new PrimeData(), enterFromGamer);
             case CH_EXIT -> { }
             default -> System.out.println("The wrong number " + gameNumber + " was selected.\nTry again.");
         }
