@@ -14,7 +14,7 @@ public class GcdData implements Game { //Наибольший общий дел�
         int number1 = (int) (Math.random() * MAX_OF_NUMBER);
         int number2 = (int) (Math.random() * MAX_OF_NUMBER);
         //Пропишем пару Вопрос + ответ
-        roundData[0] = String.valueOf(number1) + " " + String.valueOf(number2);
+        roundData[0] = number1 + " " + number2;
         roundData[1] = String.valueOf(isGCD(number1, number2));
         return roundData;
     }
