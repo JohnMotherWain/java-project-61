@@ -33,8 +33,10 @@ public class CalcGame implements Game { //Калькулятор
                 return number1 + number2; }
             case 1 -> {
                 return number1 - number2; }
-            default -> {
+            case 2 -> {
                 return number1 * number2; }
+            default ->
+                throw new Error("Unknown operandIndex selected: " + operandIndex);
         }
     }
 }

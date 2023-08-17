@@ -19,10 +19,10 @@ public class EvenGame implements Game { //Чет/нечет
         int number1 = generateRND(MAX_OF_NUMBER); //Выберем случайное число
         //Пропишем пару Вопрос + ответ
         roundData[0] = String.valueOf(number1);
-        roundData[1] = calcEven(number1);
+        roundData[1] = isEven(number1) ? "yes" : "no";
         return roundData;
     }
-    private static String calcEven(int number1) {
-        return ((number1 % 2) == 0) ? "yes" : "no";
+    private static boolean isEven(int number1) {
+        return ((number1 % 2) == 0);
     }
 }
