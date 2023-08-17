@@ -50,11 +50,9 @@ public class App {
     private static void playGame(int gameNumber) { //Обработка номера игры
         if (gameNumber == CH_GREET) {
             Cli.askGreetings();
-        } else if (gameNumber == CH_EXIT) {
-            return;
         } else if (GAMES.containsKey(gameNumber)) {
             Engine.processGameData(GAMES.get(gameNumber));
-        } else {
+        } else if (gameNumber != CH_EXIT) {
             System.out.println("The wrong number " + gameNumber + " was selected.\nTry again.");
         }
     }
