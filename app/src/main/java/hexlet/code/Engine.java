@@ -7,7 +7,7 @@ public class Engine {
     public static final int NUMBER_OF_ATTEMPTS = 3; //Количество попыток проверки
 
     public static void processGameData(Game game) {
-        String gamerName = Cli.greetings();     // Сначало приветсвие
+        String gamerName = Cli.askGreetings();     // Сначало приветсвие
         System.out.println(game.getIntro());    // Потом Интро
         Scanner enterFromGamer = new Scanner(System.in);    // Scaner для сбора ответов
         for (int i = 0; i < NUMBER_OF_ATTEMPTS; i++) {

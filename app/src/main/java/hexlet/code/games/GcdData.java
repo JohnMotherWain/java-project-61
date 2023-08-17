@@ -19,11 +19,11 @@ public class GcdData implements Game { //Наибольший общий дел�
         int number2 = (int) (Math.random() * MAX_OF_NUMBER);
         //Пропишем пару Вопрос + ответ
         roundData[0] = number1 + " " + number2;
-        roundData[1] = String.valueOf(isGCD(number1, number2));
+        roundData[1] = String.valueOf(getGCD(number1, number2));
         return roundData;
     }
 
-    private static int isGCD(int number1, int number2) {    //по методу Евклида
+    private static int getGCD(int number1, int number2) {    //по методу Евклида
         int tmpAnswer = 0;
         while (number2 != 0) {
             int tmp = number1 % number2;

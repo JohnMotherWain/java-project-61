@@ -25,7 +25,7 @@ public class App {
 
     public static void main(String[] args) {
         showMenu();
-        playGameNumber(selectGame());
+        playGame(selectGame());
     }
 
     private static void showMenu() {
@@ -47,9 +47,9 @@ public class App {
         return gameNumber;
     }
 
-    private static void playGameNumber(int gameNumber) { //Обработка номера игры
+    private static void playGame(int gameNumber) { //Обработка номера игры
         if (gameNumber == CH_GREET) {
-            Cli.greetings();
+            Cli.askGreetings();
         } else if (gameNumber == CH_EXIT) {
             return;
         } else if (GAMES.containsKey(gameNumber)) {

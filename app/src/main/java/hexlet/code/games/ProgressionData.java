@@ -25,14 +25,14 @@ public class ProgressionData implements Game { //Дополнить прогре
         int progressionDelta = (int) (1 + Math.random() * MAX_DELTA);
         int membersQuantity = (int) (MIN_MEMBERS_QUANTITY + Math.random() * FLOW_MEMBERS_QUANTITY);
         int questMember = (int) (Math.random() * (membersQuantity - 1));
-        int[] progressionArray = progressionGenerate(firstMember, progressionDelta, membersQuantity);
+        int[] progressionArray = generateProgression(firstMember, progressionDelta, membersQuantity);
         //Пропишем пару Вопрос + ответ
-        roundData[0] = questString(progressionArray, questMember);
+        roundData[0] = generateQuestionString(progressionArray, questMember);
         roundData[1] = String.valueOf(progressionArray[questMember]);
         return roundData;
     }
 
-    private static int[] progressionGenerate(int firstMember, int progressionDelta, int membersQuantity) {
+    private static int[] generateProgression(int firstMember, int progressionDelta, int membersQuantity) {
         //Арифмитическая прогрессия
         int[] returnArray = new int[membersQuantity];
         for (int i = 0; i < membersQuantity; i++) {
@@ -41,7 +41,7 @@ public class ProgressionData implements Game { //Дополнить прогре
         return returnArray;
     }
 
-    private static String questString(int[] progressionArray, int questMember) {
+    private static String generateQuestionString(int[] progressionArray, int questMember) {
         StringBuilder returnString = new StringBuilder();
         for (int i = 0; i < progressionArray.length; i++) {
             if (i != 0) {
