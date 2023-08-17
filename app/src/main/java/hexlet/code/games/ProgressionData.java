@@ -2,6 +2,8 @@ package hexlet.code.games;
 
 import hexlet.code.Game;
 
+import static hexlet.code.Utils.generateRND;
+
 public class ProgressionData implements Game { //Дополнить прогрессию
 
     private static final String INTRO = "What number is missing in the progression?";
@@ -21,10 +23,10 @@ public class ProgressionData implements Game { //Дополнить прогре
     public final String[] getNewRoundData() {
         String[] roundData = new String[2];
         //Выберем случайное число
-        int firstMember = (int) (Math.random() * MAX_OF_NUMBER / MAX_DELTA);
-        int progressionDelta = (int) (1 + Math.random() * MAX_DELTA);
-        int membersQuantity = (int) (MIN_MEMBERS_QUANTITY + Math.random() * FLOW_MEMBERS_QUANTITY);
-        int questMember = (int) (Math.random() * (membersQuantity - 1));
+        int firstMember = generateRND(MAX_OF_NUMBER / MAX_DELTA);
+        int progressionDelta = generateRND(MAX_DELTA);
+        int membersQuantity = MIN_MEMBERS_QUANTITY + generateRND(FLOW_MEMBERS_QUANTITY);
+        int questMember = generateRND(membersQuantity - 1);
         int[] progressionArray = generateProgression(firstMember, progressionDelta, membersQuantity);
         //Пропишем пару Вопрос + ответ
         roundData[0] = generateQuestionString(progressionArray, questMember);

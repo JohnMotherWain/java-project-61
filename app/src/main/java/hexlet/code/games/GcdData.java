@@ -2,6 +2,8 @@ package hexlet.code.games;
 
 import hexlet.code.Game;
 
+import static hexlet.code.Utils.generateRND;
+
 public class GcdData implements Game { //Наибольший общий делитель 2-х чисел
 
     private static final String INTRO = "Find the greatest common divisor of given numbers.";
@@ -15,8 +17,8 @@ public class GcdData implements Game { //Наибольший общий дел�
     public final String[] getNewRoundData() {
         String[] roundData = new String[2];
         //Выберем случайные числа
-        int number1 = (int) (Math.random() * MAX_OF_NUMBER);
-        int number2 = (int) (Math.random() * MAX_OF_NUMBER);
+        int number1 = generateRND(MAX_OF_NUMBER);
+        int number2 = generateRND(MAX_OF_NUMBER);
         //Пропишем пару Вопрос + ответ
         roundData[0] = number1 + " " + number2;
         roundData[1] = String.valueOf(getGCD(number1, number2));

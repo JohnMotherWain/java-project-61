@@ -3,6 +3,8 @@ package hexlet.code.games;
 import java.math.BigInteger;
 import hexlet.code.Game;
 
+import static hexlet.code.Utils.generateRND;
+
 public class PrimeData implements Game { //Простое число
 
     private static final String INTRO = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
@@ -16,7 +18,7 @@ public class PrimeData implements Game { //Простое число
     public final String[] getNewRoundData() {
         String[] roundData = new String[2];
         //Выберем случайное число
-        int number1 = (int) (Math.random() * MAX_OF_NUMBER);
+        int number1 = generateRND(MAX_OF_NUMBER);
         //Пропишем пару Вопрос + ответ
         roundData[0] = String.valueOf(number1);
         roundData[1] = (isProbablePrime(number1)) ? "yes" : "no";
