@@ -1,10 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.EvenData;
-import hexlet.code.games.CalcData;
-import hexlet.code.games.GcdData;
-import hexlet.code.games.ProgressionData;
-import hexlet.code.games.PrimeData;
+import hexlet.code.games.EvenGame;
+import hexlet.code.games.CalcGame;
+import hexlet.code.games.GcdGame;
+import hexlet.code.games.ProgressionGame;
+import hexlet.code.games.PrimeGame;
 
 import java.util.Map;
 import java.util.Scanner;
@@ -14,11 +14,11 @@ public class App {
     private static final int CH_GREET = 1;
 
     private static final Map<Integer, Game> GAMES = Map.of(
-            2, new EvenData(),
-            3, new CalcData(),
-            4, new GcdData(),
-            5, new ProgressionData(),
-            6, new PrimeData()
+            2, new EvenGame(),
+            3, new CalcGame(),
+            4, new GcdGame(),
+            5, new ProgressionGame(),
+            6, new PrimeGame()
     );
 
     private static final int CH_EXIT = 0;

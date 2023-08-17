@@ -4,7 +4,7 @@ import hexlet.code.Game;
 
 import static hexlet.code.Utils.generateRND;
 
-public class GcdData implements Game { //Наибольший общий делитель 2-х чисел
+public class GcdGame implements Game { //Наибольший общий делитель 2-х чисел
 
     private static final String INTRO = "Find the greatest common divisor of given numbers.";
 

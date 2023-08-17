@@ -4,7 +4,7 @@ import hexlet.code.Game;
 
 import static hexlet.code.Utils.generateRND;
 
-public class CalcData implements Game { //Калькулятор
+public class CalcGame implements Game { //Калькулятор
 
     private static final String INTRO = "What is the result of the expression?";
 

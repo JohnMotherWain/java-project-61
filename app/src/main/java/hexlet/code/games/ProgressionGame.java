@@ -4,7 +4,7 @@ import hexlet.code.Game;
 
 import static hexlet.code.Utils.generateRND;
 
-public class ProgressionData implements Game { //Дополнить прогрессию
+public class ProgressionGame implements Game { //Дополнить прогрессию
 
     private static final String INTRO = "What number is missing in the progression?";
 

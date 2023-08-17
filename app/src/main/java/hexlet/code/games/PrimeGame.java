@@ -5,7 +5,7 @@ import hexlet.code.Game;
 
 import static hexlet.code.Utils.generateRND;
 
-public class PrimeData implements Game { //Простое число
+public class PrimeGame implements Game { //Простое число
 
     private static final String INTRO = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 

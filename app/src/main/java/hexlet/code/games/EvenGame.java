@@ -4,7 +4,7 @@ import hexlet.code.Game;
 
 import static hexlet.code.Utils.generateRND;
 
-public class EvenData implements Game { //Чет/нечет
+public class EvenGame implements Game { //Чет/нечет
 
     private static final String INTRO = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
