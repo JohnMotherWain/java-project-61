@@ -20,16 +20,15 @@ public class App {
             5, new ProgressionData(),
             6, new PrimeData()
     );
-    //private static final int CH_LAST = 6;
 
     private static final int CH_EXIT = 0;
 
     public static void main(String[] args) {
-        playGameNumber(collectGameNumber());
+        showMenu();
+        playGameNumber(selectGame());
     }
 
-    private static int collectGameNumber() {
-        Scanner enterFromGamer = new Scanner(System.in);
+    private static void showMenu() {
         System.out.println("""
                 Please enter the game number and press Enter.
                 1 - Greet
@@ -39,6 +38,9 @@ public class App {
                 5 - Progression
                 6 - Prime
                 0 - Exit""");
+    }
+    private static int selectGame() {
+        Scanner enterFromGamer = new Scanner(System.in);
         int gameNumber = enterFromGamer.nextInt();
         System.out.println("Your choice: " + gameNumber);
         enterFromGamer.nextLine();  //Компенсатор багов Scanner-а
@@ -46,15 +48,14 @@ public class App {
     }
 
     private static void playGameNumber(int gameNumber) { //Обработка номера игры
-        if (gameNumber < CH_EXIT || gameNumber > (GAMES.size() + 1)) {
-            System.out.println("The wrong number " + gameNumber + " was selected.\nTry again.");
+        if (gameNumber == CH_GREET) {
+            Cli.greetings();
+        } else if (gameNumber == CH_EXIT) {
             return;
-        }
-
-        switch (gameNumber) {
-            case CH_GREET -> Cli.greetings();
-            case CH_EXIT -> { }
-            default -> Engine.processGameData(GAMES.get(gameNumber));
+        } else if (GAMES.containsKey(gameNumber)) {
+            Engine.processGameData(GAMES.get(gameNumber));
+        } else {
+            System.out.println("The wrong number " + gameNumber + " was selected.\nTry again.");
         }
     }
 
