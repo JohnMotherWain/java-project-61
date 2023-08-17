@@ -21,9 +21,18 @@ public class CalcData implements Game { //Калькулятор
         int operandIndex = (int) (Math.random() * digitOperators.length);
         //Пропишем пару Вопрос + ответ
         roundData[0] = number1 + " " + digitOperators[operandIndex] + " " + number2;
-        int intResult = operandIndex == 0 ? number1 + number2
-                : operandIndex == 1 ? number1 - number2 : number1 * number2;
-        roundData[1] = String.valueOf(intResult);
+        roundData[1] = String.valueOf(calcValue(number1, number2, operandIndex));
         return roundData;
+    }
+
+    private static int calcValue(int number1, int number2, int operandIndex) {    //вычислим калькулятор
+        switch (operandIndex) {
+            case 0 -> {
+                return number1 + number2; }
+            case 1 -> {
+                return number1 - number2; }
+            default -> {
+                return number1 * number2; }
+        }
     }
 }
