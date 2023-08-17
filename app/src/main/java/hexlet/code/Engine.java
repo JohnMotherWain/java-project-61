@@ -3,7 +3,9 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
+
     public static final int NUMBER_OF_ATTEMPTS = 3; //Количество попыток проверки
+
     public static void processGameData(Game game) {
         String gamerName = Cli.greetings();     // Сначало приветсвие
         System.out.println(game.getIntro());    // Потом Интро

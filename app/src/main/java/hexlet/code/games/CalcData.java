@@ -3,11 +3,15 @@ package hexlet.code.games;
 import hexlet.code.Game;
 
 public class CalcData implements Game { //Калькулятор
+
     private static final String INTRO = "What is the result of the expression?";
+
     private static final int MAX_OF_NUMBER = 100; //Максимальное число для рандомных значений
+
     public final String getIntro() {
         return INTRO;
     }
+
     public final String[] getNewRoundData() {
         String[] roundData = new String[2];
         //Выберем случайные числа и операцию
