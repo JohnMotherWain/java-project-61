@@ -17,7 +17,10 @@ public class EvenData implements Game { //Чет/нечет
         int number1 = (int) (Math.random() * MAX_OF_NUMBER); //Выберем случайное число
         //Пропишем пару Вопрос + ответ
         roundData[0] = String.valueOf(number1);
-        roundData[1] = ((number1 % 2) == 0) ? "yes" : "no";
+        roundData[1] = calcEven(number1);
         return roundData;
+    }
+    private static String calcEven(int number1) {
+        return ((number1 % 2) == 0) ? "yes" : "no";
     }
 }
